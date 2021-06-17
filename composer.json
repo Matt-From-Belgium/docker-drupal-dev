@@ -1,3 +1,7 @@
 {
     
+    "require": {
+        "drupal/recommended-project": "^8.0",
+        "drush/drush": "^10.5"
+    }
 }
