@@ -11,12 +11,17 @@ services:
       - "80:80"
     stdin_open: true # docker run -i
     tty: true 
+    depends_on:
+      - mysql-server
   mysql-server:
-    image: mysql:8.0.19
+    image: mysql:5
+    hostname: mysql-server
     restart: always
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
 
