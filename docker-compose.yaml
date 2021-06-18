@@ -9,6 +9,7 @@ services:
       - "./:/var/www/"
     ports:
       - "80:80"
+      - "9003:9003"
     stdin_open: true # docker run -i
     tty: true 
     depends_on:
