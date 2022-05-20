@@ -7,7 +7,7 @@
         }
      ],
     "require": {
-        "drupal/recommended-project": "~8.0",
+        "drupal/recommended-project": "~9.0",
         "drush/drush": "^10.2"
     },
 	"extra": {
