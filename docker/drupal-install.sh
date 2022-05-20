@@ -11,5 +11,6 @@ wait-for-it --host=mysql-server --port=3306 --timeout=30
 ./vendor/drush/drush/drush -y si minimal --root=/var/www/web --db-url=mysql://root:secret@mysql-server/drupal --config-dir=/var/www/config --account-pass=admin
 ./vendor/drush/drush/drush -y cr
 chown -R root:www-data /var/www/web/sites
+chown -R root:www-data /var/www/web/modules
 chmod -R 775 /var/www/web/sites
 apache2-foreground
