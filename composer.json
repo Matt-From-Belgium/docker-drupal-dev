@@ -7,7 +7,7 @@
         }
      ],
     "require": {
-        "drupal/recommended-project": "~8.0",
+        "drupal/recommended-project": "~9.0",
         "drush/drush": "^10.2"
     },
 	"extra": {
@@ -25,6 +25,16 @@
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        }
+    },
+   "config": {
+        "allow-plugins": {
+                "composer/installers": true,
+                "cweagans/composer-patches": true,
+                "oomphinc/composer-installers-extender": true,
+	        "drupal/core-composer-scaffold": true,
+	        "drupal/core-project-message": true,
+      		"vardot/varbase-updater": true
         }
     }
 }
