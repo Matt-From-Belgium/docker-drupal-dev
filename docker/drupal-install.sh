@@ -12,5 +12,6 @@ wait-for-it --host=mysql-server --port=3306 --timeout=30
 ./vendor/drush/drush/drush -y cr
 chown -R root:www-data /var/www/web/sites
 chown -R root:www-data /var/www/web/modules
+chown -R root:www-data /var/www/web/themes
 chmod -R 775 /var/www
 apache2-foreground
