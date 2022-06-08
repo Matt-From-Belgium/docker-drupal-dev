@@ -16,7 +16,7 @@ chown -R root:www-data /var/www/web/themes
 chmod -R 775 /var/www
 chmod 775 ./web/sites/default/settings.php
 echo "\$settings['config_sync_directory'] = '../config';" >> ./web/sites/default/settings.php
-echo "\$settings['file_private_path'] = '';"  >> ./web/sites/default/settings.php
+echo "\$settings['file_private_path'] = '../private';"  >> ./web/sites/default/settings.php
 echo "\$settings['file_temp_path'] = '/tmp';" >> ./web/sites/default/settings.php
 echo "\$settings['trusted_host_patterns'] = [" >> ./web/sites/default/settings.php
 echo "  '^localhost\$'," >> ./web/sites/default/settings.php
@@ -24,6 +24,7 @@ echo "];" >> ./web/sites/default/settings.php
 chmod 755 ./web/sites/default
 chmod 755 ./web/sites/default/settings.php
 mkdir private
-chmod 770 ./private
+chown -R root:www-data ./private
+chmod -R 770 ./private
 ./vendor/drush/drush/drush cron
 apache2-foreground
