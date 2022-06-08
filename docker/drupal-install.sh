@@ -14,4 +14,11 @@ chown -R root:www-data /var/www/web/sites
 chown -R root:www-data /var/www/web/modules
 chown -R root:www-data /var/www/web/themes
 chmod -R 775 /var/www
+echo "\$settings['config_sync_directory'] = '../config';" >> ./web/sites/default/settings.php
+echo "\$settings['file_private_path'] = '';"  >> ./web/sites/default/settings.php
+echo "\$settings['file_temp_path'] = '/tmp';" >> ./web/sites/default/settings.php
+chmod 755 ./web/sites/default
+chmod 755 ./web/sites/default/settings.php
+mkdir private
+chmod 770 ./private
 apache2-foreground
