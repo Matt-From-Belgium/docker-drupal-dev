@@ -26,5 +26,6 @@ chmod 755 ./web/sites/default/settings.php
 mkdir private
 chown -R root:www-data ./private
 chmod -R 770 ./private
+chmod -R 777 ./web/sites/default/files
 ./vendor/drush/drush/drush cron
 apache2-foreground
